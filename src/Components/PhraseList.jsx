@@ -2,7 +2,7 @@ import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 
-function PhraseList({ list }) {
+function PhraseList({ list, onDeletePhrase }) {
     if (list.length) {
         return (
             <>
@@ -12,6 +12,7 @@ function PhraseList({ list }) {
                         return (<Card key={index}>
                             <CardContent>
                                 {phrase}
+                                <button onClick={() => onDeletePhrase(index)}>delete</button>
                             </CardContent>
                         </Card>)
                     })}

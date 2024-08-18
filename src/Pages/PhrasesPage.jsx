@@ -9,10 +9,17 @@ function PhrasesPage() {
     const onAdd = (newPhrase) => {
         setPhrases([...phrases, newPhrase])
     }
+
+    const onDelete = (index) => {
+        const currentPhrases = [...phrases];
+        currentPhrases.splice(index, 1);
+        setPhrases(currentPhrases)
+    }
+
     return (
         <Container maxWidth={false} sx={{ width: "30vw" }}>
             <AddPhrase onAdd={onAdd} />
-            <PhraseList list={phrases} />
+            <PhraseList list={phrases} onDeletePhrase={onDelete} />
         </Container>
 
     )
