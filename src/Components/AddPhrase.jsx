@@ -3,8 +3,9 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 
-function AddPhrase({ onAdd }) {
-    const [phrase, setPhrase] = useState("")
+function AddPhrase({ onAdd, initialValue = "" }) {
+
+    const [phrase, setPhrase] = useState(initialValue)
     const onPhraseChange = (e) => {
         setPhrase(e.target.value)
     }
