@@ -25,7 +25,7 @@ function AddPhrase({ onAdd, initialValue = "" }) {
             />
             <Box sx={{ display: "grid", gridTemplateColumns: "8fr 1fr" }}>
                 <div></div>
-                <Button variant="contained" onClick={handleClick} disabled={!phrase}>Add</Button>
+                <Button variant="contained" onClick={handleClick} disabled={!phrase}>{initialValue ? "Save" : "Add"}</Button>
             </Box>
 
 

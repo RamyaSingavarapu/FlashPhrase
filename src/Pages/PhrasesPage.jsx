@@ -16,10 +16,16 @@ function PhrasesPage() {
         setPhrases(currentPhrases)
     }
 
+    const onEdit = (index, phrase) => {
+        const currentPhrases = [...phrases];
+        currentPhrases[index] = phrase;
+        setPhrases(currentPhrases);
+    }
+
     return (
         <Container maxWidth={false} sx={{ width: "30vw" }}>
             <AddPhrase onAdd={onAdd} />
-            <PhraseList list={phrases} onDeletePhrase={onDelete} />
+            <PhraseList list={phrases} onDeletePhrase={onDelete} onEdit={onEdit} />
         </Container>
 
     )
